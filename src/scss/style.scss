@@ -20,6 +20,7 @@
         height: 977px;
         position: relative;
         border-right: 1px solid #FFFFFF;
+        z-index: 10;
 
         &::before {
             content: '';
@@ -144,10 +145,9 @@
 
     .main {
         display: block;
-        width: 100%;
-        height: 100%;
-
         .main__bg {
+            width: 100%;
+            height: 977px;
 
             &::before {
                 content: '';
@@ -159,7 +159,7 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                z-index: 5;
+                z-index: 1;
                 cursor: auto;
             }
 
@@ -173,7 +173,7 @@
                 height: 100%;
                 max-width: 1002px;
                 max-height: 496px;
-                z-index: 5;
+                z-index: 1;
                 cursor: auto;
             }
 
@@ -185,28 +185,53 @@
                 justify-content: center; // выровнять по центру
                 list-style: none; // убираем черные маркеры
                 z-index: 1000;
-                bottom: -30%;
+                bottom: 0;
+                right: 0;
+                margin-right: 40px;
                 margin-bottom: 100px;
+                z-index: 100;
+                
 
                 li {
                     position: relative;
                     display: inline-block;
-                    width: 20px;
-                    height: 20px;
-                    margin: 0 5px;
+                    width: 200px;
+                    height: 4px;
+                    margin: 0 40px;
                     padding: 0;
                     cursor: pointer;
+                    background-color: #ffffff;
                 }
 
                 button {
                     display: flex;
                     gap: 20px;
+                    font-size: 0;
                 }
                 
 
 
                 .slick-active {
                     background-color: #4AF6CD;
+                }
+
+                .dots__slider {
+                    margin-top: 16px;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: #fff;
+                    h3 {
+                        font-size: 24px;
+                        font-weight: 800;
+
+                    }
+
+                    h4 {
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
                 }
             }
 
@@ -215,18 +240,20 @@
                 left: 0;
                 top: 0;
                 width: 100%;
-                z-index: -1;
+                height: 100%;
+                z-index: 1;
 
                 &-info {
                     position: relative;
                     width: 100%;
-                    min-height: 110vh;
+                    height: 977px;
                     z-index: 10;
                     display: flex;
                     object-fit: contain;
                     transition-property: transform;
                     transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
                     box-sizing: content-box;
+                    pointer-events: visible;
                     .slider__image {
 
                         &::after {
@@ -259,6 +286,7 @@
                             transition: all .2s ease;
                             text-align: right;
                             text-transform: uppercase;
+                            z-index: 10;
 
 
                             .h4-1::before {
