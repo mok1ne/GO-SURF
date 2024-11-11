@@ -11,13 +11,13 @@
     overflow: hidden;
 
     .container {
-        max-width: 1800px;
-        padding: 0 16px;
+        margin: 0 168px;
         margin: auto;
     }
 
     .header {
-        max-width: 168px;
+        width: 168px;
+        height: 977px;
         position: relative;
         border-right: 1px solid #FFFFFF;
 
@@ -69,7 +69,8 @@
 
 
         &__nav {
-            margin-top: 80px;
+            margin-top: 60px;
+            margin-bottom: 30px;
         }
 
         &__ul {
@@ -77,27 +78,74 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 40px;
+            gap: 35px;
         }
 
         &__list {
             a {
                 display: flex;
                 flex-direction: column;
-                width: fit-content;
+                justify-content: center;
+                align-items: center;
                 text-align: center;
                 font-size: 12px;
                 line-height: 14px;
                 letter-spacing: 3px;
                 color: #FFFFFF;
 
-
+                img {
+                    margin-bottom: 5px;
+                }
             }
         }
+
+        &__block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+        }
+
+        &__search {
+            margin-bottom: 20px;
+        }
+
+        &__info {
+            text-align: center;
+
+            h2 {
+                font-size: 72px;
+                line-height: 64px;
+                font-weight: 800;
+            }
+
+            h6 {
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 1.4px;
+                font-weight: 400;
+                margin-top: 10px;
+            }
+        }
+
+        &__pos {
+            display: flex;
+            margin-top: 30px;
+            gap: 8px;
+            align-items: center;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 1.05px;
+            font-weight: 300;
+        }
+
     }
 
     .main {
         display: block;
+        width: 100%;
+        height: 100%;
 
         .main__bg {
 
@@ -135,8 +183,29 @@
                 justify-content: center; // выровнять по центру
                 list-style: none; // убираем черные маркеры
                 z-index: 1000;
-                bottom: 0;
+                bottom: -30%;
                 margin-bottom: 100px;
+
+                li {
+                    position: relative;
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    margin: 0 5px;
+                    padding: 0;
+                    cursor: pointer;
+                }
+
+                button {
+                    display: flex;
+                    gap: 20px;
+                }
+                
+
+
+                .slick-active {
+                    background-color: #4AF6CD;
+                }
             }
 
             .bg__slider {
@@ -149,20 +218,13 @@
                 &-info {
                     position: relative;
                     width: 100%;
-                    min-height: 130vh;
+                    min-height: 110vh;
                     z-index: 10;
                     display: flex;
                     object-fit: contain;
                     transition-property: transform;
                     transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
                     box-sizing: content-box;
-
-
-                    img {
-                        height: 1100px;
-
-                    }
-
                     .slider__image {
 
                         &::after {
@@ -179,7 +241,7 @@
 
                         img {
                             width: 100%;
-                            height: 130vh;
+                            height: 106vh;
 
 
                         }
@@ -187,7 +249,7 @@
                         .slider__content {
                             display: block;
                             position: absolute;
-                            bottom: 350px;
+                            top: 600px;
                             right: 0;
                             margin-right: 80px;
                             color: #fff;
@@ -244,20 +306,10 @@
                                 line-height: 86px;
                                 font-weight: 800;
                             }
-
-
-
                         }
                     }
                 }
-
-
-
-
             }
-
-
         }
-
     }
 }
