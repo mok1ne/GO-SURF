@@ -1,5 +1,19 @@
 import '../../src/scss/style.scss'
 
+function clockTick() {
+    let currentTime = new Date(),
+        month = currentTime.getMonth() + 1,
+        day = currentTime.getDate(),
+        year = currentTime.getFullYear()
+    const dayElement = document.querySelector('.header__info h2');
+    const dateAndYearElement = document.querySelector('.header__info h6');
+
+    dayElement.textContent = day;
+
+    dateAndYearElement.textContent = `${month} | ${year}`;
+}
+
+clockTick();
 
 
 $('.bg__slider-info').slick({
@@ -23,25 +37,6 @@ $('.bg__slider-info').slick({
     draggable: false,
     zIndex: 10
 });
-
-
-function clockTick() {
-    let currentTime = new Date(),
-        month = currentTime.getMonth() + 1,
-        day = currentTime.getDate(),
-        year = currentTime.getFullYear()
-    const dayElement = document.querySelector('.header__info h2');
-    const dateAndYearElement = document.querySelector('.header__info h6');
-
-    dayElement.textContent = day;
-
-    dateAndYearElement.textContent = `${month} | ${year}`;
-}
-
-clockTick();
-
-
-
 
 
 

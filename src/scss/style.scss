@@ -5,6 +5,10 @@
     font-family: 'Fira Sans', sans-serif;
 }
 
+body {
+    background-color: #171919;
+}
+
 .wrapper {
     min-height: 100%;
     max-width: 100%;
@@ -145,9 +149,9 @@
 
     .main {
         display: block;
+
         .main__bg {
             width: 100%;
-            height: 977px;
 
             &::before {
                 content: '';
@@ -180,17 +184,17 @@
             .slick-dots {
                 position: absolute;
                 text-align: center;
-                display: flex; // поставить кнопки в ряд
+                display: flex; 
                 align-items: center;
-                justify-content: center; // выровнять по центру
-                list-style: none; // убираем черные маркеры
+                justify-content: center; 
+                list-style: none; 
                 z-index: 1000;
                 bottom: 0;
                 right: 0;
                 margin-right: 40px;
                 margin-bottom: 100px;
                 z-index: 100;
-                
+
 
                 li {
                     position: relative;
@@ -208,7 +212,7 @@
                     gap: 20px;
                     font-size: 0;
                 }
-                
+
 
 
                 .slick-active {
@@ -222,6 +226,7 @@
                     align-items: center;
                     justify-content: space-between;
                     color: #fff;
+
                     h3 {
                         font-size: 24px;
                         font-weight: 800;
@@ -249,11 +254,12 @@
                     height: 977px;
                     z-index: 10;
                     display: flex;
-                    object-fit: contain;
+                    object-fit: cover;
                     transition-property: transform;
                     transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
                     box-sizing: content-box;
                     pointer-events: visible;
+
                     .slider__image {
 
                         &::after {
@@ -337,6 +343,288 @@
                                 font-weight: 800;
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .about__surf {
+            position: relative;
+            padding-bottom: 100px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 200%;
+                background-color: #41414156;
+                left: 45%;
+                top: 0;
+                text-align: center;
+            }
+
+            .surf__inner {
+                padding-top: 160px;
+                margin: 0 80px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height: 200%;
+                    background-color: #41414156;
+                    left: 87px;
+                    top: 0;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height: 200%;
+                    background-color: #41414156;
+                    left: 68%;
+                    top: 0;
+                }
+            }
+
+            .surf__title {
+                h2 {
+                    position: relative;
+                    font-size: 80px;
+                    font-weight: 800;
+                    line-height: 156px;
+                    color: #ffffff;
+                    margin-left: 196px;
+                    max-width: 400px;
+                    text-transform: uppercase;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: url(../../public/images/Surf.png) no-repeat;
+                        width: 100%;
+                        height: 100%;
+                        top: 60px;
+                        left: -275px;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 80px;
+                        height: 1px;
+                        top: 35px;
+                        right: 215px;
+                        background-color: #4AF6CD;
+                    }
+                }
+            }
+
+
+
+            .surf__description {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: right;
+
+                .h4-1 {
+                    position: relative;
+                    font-size: 22px;
+                    font-weight: 400;
+                    letter-spacing: 7.33px;
+                    color: #ffffff;
+                    line-height: 32px;
+                    text-transform: uppercase;
+                    opacity: 50.12%;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        width: 80px;
+                        background-color: #ffffff;
+                        opacity: 50%;
+                        top: 15px;
+                        left: -100px;
+                    }
+                }
+
+                h2 {
+                    position: relative;
+                    font-size: 40px;
+                    font-weight: 800;
+                    line-height: 86px;
+                    color: #ffffff;
+                    text-transform: uppercase;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 1px;
+                        height: 35px;
+                        background-color: #fff;
+                        top: 25px;
+                        right: 90px;
+                    }
+                }
+            }
+
+            .surf__content {
+                position: relative;
+                max-width: 1229px;
+                max-height: 634.024px;
+                margin: 0 auto;
+                margin-bottom: 150px;
+                padding: 0 15px;
+            }
+
+            .surf__map {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                .surfWorldMap {
+                    width: 100%;
+                    height: 100%;
+                    max-width: 1259px;
+                    max-height: 665.024px;
+                    object-fit: cover;
+                }
+            }
+
+            .surf__point:hover .surf__point-info {
+                opacity: 1;
+                visibility: visible;;
+                transition: all .6s ease;
+            }
+
+            .surf__point {
+                position: absolute;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background-color: #4AF6CD;
+                box-shadow: 0 0 25px #4AF6CD;
+
+                &:nth-child(2) {
+                    top: 51%;
+                    left: 0;
+                }
+
+                &:nth-child(3) {
+                    top: 45%;
+                    left: 12%;
+                }
+                &:nth-child(4) {
+                    top: 51%;
+                    left: 27%;
+                }
+                &:nth-child(5) {
+                    top: 75%;
+                    left: 34%;
+                }
+                &:nth-child(6) {
+                    top: 34%;
+                    left: 45%;
+                }
+                &:nth-child(7) {
+                    top: 84%;
+                    left: 53%;
+                }
+                &:nth-child(8) {
+                    top: 60%;
+                    left: 67%;
+                }
+                &:nth-child(9) {
+                    top: 60%;
+                    left: 67%;
+                }
+                &:nth-child(10) {
+                    top: 79%;
+                    left: 88%;
+                }
+
+
+                
+
+                &-info {
+                    background-color: #0f10108e;
+                    padding: 28px 32px;
+                    position: relative;
+                    width: 283px;
+                    height: 216px;
+                    margin-bottom: 30px;
+                    border-radius: 6px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .6s ease;
+                }
+
+                .surf__point-info.active {
+                    opacity: 1;
+                    overflow: visible;
+                }
+
+                &-title {
+                    h2 {
+                        position: relative;
+                        font-size: 18px;
+                        line-height: 26px;
+                        color: #fff;
+                        text-transform: uppercase;
+                        margin-bottom: 14px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 80px;
+                            height: 1px;
+                            bottom: -7px;
+                            background-color: #4AF6CD;
+
+                        }
+                    }
+
+                    h4 {
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #fff;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                &-ico {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+
+                &-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h6 {
+                        font-size: 16px;
+                        line-height: 23px;
+                        font-weight: 800;
+                        color: #fff;
+                        margin-top: 6px;
+                        margin-bottom: 3px;
+                    }
+
+                    p {
+                        font-size: 10px;
+                        line-height: 12px;
+                        font-weight: 300;
+                        color: #fff;
                     }
                 }
             }
