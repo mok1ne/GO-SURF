@@ -41,3 +41,5 @@ $('.bg__slider-info').slick({
 
 
 
+
+

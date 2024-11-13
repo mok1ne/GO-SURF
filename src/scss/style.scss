@@ -163,7 +163,7 @@ body {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                z-index: 1;
+                z-index: 2;
                 cursor: auto;
             }
 
@@ -361,6 +361,7 @@ body {
                 left: 45%;
                 top: 0;
                 text-align: center;
+                z-index: -1;
             }
 
             .surf__inner {
@@ -376,6 +377,7 @@ body {
                     background-color: #41414156;
                     left: 87px;
                     top: 0;
+                    z-index: -1;
                 }
 
                 &::after {
@@ -386,6 +388,7 @@ body {
                     background-color: #41414156;
                     left: 68%;
                     top: 0;
+                    z-index: -1;
                 }
             }
 
@@ -629,5 +632,131 @@ body {
                 }
             }
         }
+
+        .about__beach {
+            margin-bottom: 265px;
+            .about__info {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .about__image {
+                    width: 100%;
+                    height: 100%;
+                    padding: 72px 40px 0 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    filter: brightness(40%);
+                    transition: all .5s ease;
+
+
+                    &:hover {
+                        filter: brightness(100%)
+                    }
+
+                    &:hover .view-surf{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                    
+                    h2 {
+                        font-size: 40px;
+                        font-weight: 800;
+                        line-height: 36px;
+                        color: #fff;
+                    }
+    
+                    p {
+                        position: relative;
+                        display: inline-block;
+                        -webkit-writing-mode: vertical-rl;
+                        -ms-writing-mode: tb-rl;
+                        writing-mode: vertical-rl;
+                        -webkit-transform: rotate(-180deg);
+                        -ms-transform: rotate(-180deg);
+                        transform: rotate(-180deg);
+                        -webkit-transform-origin: center;
+                        -ms-transform-origin: center;
+                        transform-origin: center;
+                        font-size: 18px;
+                        line-height: 22px;
+                        font-weight: 400;
+                        letter-spacing: 8px;
+                        color: #fff;
+                        text-transform: uppercase;
+                        margin-bottom:  60px;
+                    }
+
+                    &--1 {
+                        background: url(../../public/images/MalibuBeach.jpg) no-repeat;
+                        width: 390px;
+                        height: 750px;
+                        z-index: 2;
+                    }
+                    &--2 {
+                        background: url(../../public/images/Airlie\ Beach.jpg) no-repeat;
+                        width: 390px;
+                        height: 750px;
+                        margin-bottom: 32px;
+                        z-index: 2;
+                    }
+                    &--3 {
+                        background: url(../../public/images/Cloud\ Nine\ Beach.jpg) no-repeat;
+                        width: 390px;
+                        height: 750px;
+                        z-index: 2;
+                        margin-top: 57px;
+                    }
+                    &--4 {
+                        background: url(../../public/images/Vieux\ Boucau\ Beach.jpg) no-repeat;
+                        width: 390px;
+                        height: 750px;
+                        z-index: 2;
+                        margin-bottom: 32px;
+                    }
+    
+                    .view-surf {
+                        position: relative;
+                        background-color: transparent;
+                        font-size: 40px;
+                        line-height: 36px;
+                        width: 278px;
+                        height: 80px;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        color: #fff;
+                        z-index: 1;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all .5s ease;
+    
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 168px;
+                            height: 80px;
+                            background-color: #4AF6CD;
+                            z-index: -1;
+                            right: 0;
+                            top: 0;
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 20px;
+                            height: 1px;
+                            background-color: #fff;
+                            left: 102px;
+                            top: 38px;
+                        }
+                    }
+                }
+            }
+            
+        }
     }
 }
+
+
