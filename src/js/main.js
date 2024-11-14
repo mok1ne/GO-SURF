@@ -39,6 +39,23 @@ $('.bg__slider-info').slick({
 });
 
 
+$('.travel__content').slick({
+    infinite: true,
+    fade: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+});
+
+
+document.querySelector ('.slick-next')
+
+
+
 
 
 

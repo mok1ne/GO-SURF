@@ -9,6 +9,107 @@ body {
     background-color: #171919;
 }
 
+
+.slick-prev {
+    position: absolute;
+    background: url(/public/images/ico/arrow-prev-2.svg) no-repeat;
+    width: 24.15px;
+    height: 20.15px;
+    color: transparent;
+    right: 0;
+    top: 150px;
+    margin-right: 130px;
+    opacity: 70%;
+    z-index: 100;
+}
+
+.slick-next {
+    position: absolute;
+    background: url(/public/images/ico/arrow-next-2.svg) no-repeat;
+    width: 24.15px;
+    height: 20.15px;
+    color: transparent;
+    right: 0;
+    top: 150px;
+    opacity: 70%;
+    z-index: 100;
+    margin-right: 80px;
+}
+
+.view-surf {
+    position: relative;
+    background-color: transparent;
+    font-size: 40px;
+    line-height: 36px;
+    width: 278px;
+    height: 80px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 168px;
+        height: 80px;
+        background-color: #4AF6CD;
+        z-index: -1;
+        right: 0;
+        top: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background-color: #fff;
+        left: 102px;
+        top: 38px;
+    }
+
+    &--hiden {
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: transparent;
+        font-size: 40px;
+        line-height: 36px;
+        width: 318px;
+        height: 80px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #fff;
+        z-index: 1;
+        transition: all .5s ease;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            width: 201px;
+            height: 80px;
+            background-color: #4AF6CD;
+            z-index: -1;
+            right: -10px;
+            top: 0;
+        }
+    
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+            left: 115px;
+            top: 38px;
+        }
+    }
+}
+
 .wrapper {
     min-height: 100%;
     max-width: 100%;
@@ -56,7 +157,6 @@ body {
             font-weight: 800;
             line-height: 86px;
             text-transform: uppercase;
-            color: var(--light-color);
             z-index: 2;
             color: #FFFFFF;
 
@@ -184,10 +284,10 @@ body {
             .slick-dots {
                 position: absolute;
                 text-align: center;
-                display: flex; 
+                display: flex;
                 align-items: center;
-                justify-content: center; 
-                list-style: none; 
+                justify-content: center;
+                list-style: none;
                 z-index: 1000;
                 bottom: 0;
                 right: 0;
@@ -331,6 +431,8 @@ body {
                                 opacity: 0.5011718869;
                             }
 
+
+
                             h2 {
                                 font-size: 80px;
                                 line-height: 86px;
@@ -356,8 +458,9 @@ body {
                 content: '';
                 position: absolute;
                 width: 1px;
-                height: 200%;
-                background-color: #41414156;
+                height: 400%;
+                background-color: #41414121;
+                ;
                 left: 45%;
                 top: 0;
                 text-align: center;
@@ -373,8 +476,9 @@ body {
                     content: '';
                     position: absolute;
                     width: 1px;
-                    height: 200%;
-                    background-color: #41414156;
+                    height: 400%;
+                    background-color: #41414121;
+                    ;
                     left: 87px;
                     top: 0;
                     z-index: -1;
@@ -384,9 +488,9 @@ body {
                     content: '';
                     position: absolute;
                     width: 1px;
-                    height: 200%;
-                    background-color: #41414156;
-                    left: 68%;
+                    height: 400%;
+                    background-color: #41414121;
+                    right: 347px;
                     top: 0;
                     z-index: -1;
                 }
@@ -400,14 +504,14 @@ body {
                     line-height: 156px;
                     color: #ffffff;
                     margin-left: 196px;
-                    max-width: 400px;
+                    width: fit-content;
                     text-transform: uppercase;
 
                     &::before {
                         content: '';
                         position: absolute;
                         background: url(../../public/images/Surf.png) no-repeat;
-                        width: 100%;
+                        width: 467px;
                         height: 100%;
                         top: 60px;
                         left: -275px;
@@ -419,7 +523,7 @@ body {
                         width: 80px;
                         height: 1px;
                         top: 35px;
-                        right: 215px;
+                        right: 0;
                         background-color: #4AF6CD;
                     }
                 }
@@ -458,7 +562,7 @@ body {
                 h2 {
                     position: relative;
                     font-size: 40px;
-                    font-weight: 800;
+                    font-weight: 600;
                     line-height: 86px;
                     color: #ffffff;
                     text-transform: uppercase;
@@ -501,7 +605,8 @@ body {
 
             .surf__point:hover .surf__point-info {
                 opacity: 1;
-                visibility: visible;;
+                visibility: visible;
+                ;
                 transition: all .6s ease;
             }
 
@@ -525,37 +630,44 @@ body {
                     top: 45%;
                     left: 12%;
                 }
+
                 &:nth-child(4) {
                     top: 51%;
                     left: 27%;
                 }
+
                 &:nth-child(5) {
                     top: 75%;
                     left: 34%;
                 }
+
                 &:nth-child(6) {
                     top: 34%;
                     left: 45%;
                 }
+
                 &:nth-child(7) {
                     top: 84%;
                     left: 53%;
                 }
+
                 &:nth-child(8) {
                     top: 60%;
                     left: 67%;
                 }
+
                 &:nth-child(9) {
                     top: 60%;
                     left: 67%;
                 }
+
                 &:nth-child(10) {
                     top: 79%;
                     left: 88%;
                 }
 
 
-                
+
 
                 &-info {
                     background-color: #0f10108e;
@@ -635,6 +747,7 @@ body {
 
         .about__beach {
             margin-bottom: 265px;
+
             .about__info {
                 display: flex;
                 align-items: center;
@@ -652,21 +765,21 @@ body {
 
 
                     &:hover {
-                        filter: brightness(100%)
+                        filter: brightness(90%)
                     }
 
-                    &:hover .view-surf{
+                    &:hover .view-surf {
                         visibility: visible;
                         opacity: 1;
                     }
-                    
+
                     h2 {
                         font-size: 40px;
                         font-weight: 800;
                         line-height: 36px;
                         color: #fff;
                     }
-    
+
                     p {
                         position: relative;
                         display: inline-block;
@@ -685,7 +798,7 @@ body {
                         letter-spacing: 8px;
                         color: #fff;
                         text-transform: uppercase;
-                        margin-bottom:  60px;
+                        margin-bottom: 60px;
                     }
 
                     &--1 {
@@ -693,70 +806,273 @@ body {
                         width: 390px;
                         height: 750px;
                         z-index: 2;
+                        transform: translateX(65px);
                     }
+
                     &--2 {
                         background: url(../../public/images/Airlie\ Beach.jpg) no-repeat;
                         width: 390px;
                         height: 750px;
                         margin-bottom: 32px;
                         z-index: 2;
+                        transform: translateX(40px);
+
                     }
+
                     &--3 {
                         background: url(../../public/images/Cloud\ Nine\ Beach.jpg) no-repeat;
                         width: 390px;
                         height: 750px;
                         z-index: 2;
-                        margin-top: 57px;
+                        margin-top: 87px;
                     }
+
                     &--4 {
                         background: url(../../public/images/Vieux\ Boucau\ Beach.jpg) no-repeat;
                         width: 390px;
                         height: 750px;
                         z-index: 2;
                         margin-bottom: 32px;
+                        transform: translateX(-30px);
                     }
-    
-                    .view-surf {
-                        position: relative;
-                        background-color: transparent;
-                        font-size: 40px;
-                        line-height: 36px;
-                        width: 278px;
-                        height: 80px;
-                        font-weight: 800;
-                        text-transform: uppercase;
-                        color: #fff;
-                        z-index: 1;
-                        opacity: 0;
-                        visibility: hidden;
-                        transition: all .5s ease;
-    
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            width: 168px;
-                            height: 80px;
-                            background-color: #4AF6CD;
-                            z-index: -1;
-                            right: 0;
-                            top: 0;
-                        }
 
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            width: 20px;
-                            height: 1px;
-                            background-color: #fff;
-                            left: 102px;
-                            top: 38px;
-                        }
+
+                }
+            }
+
+        }
+
+        .travel {
+            margin-bottom: 265px;
+
+            &__title {
+                h2 {
+                    position: relative;
+                    font-size: 80px;
+                    font-weight: 800;
+                    line-height: 156px;
+                    color: #ffffff;
+                    margin-left: 196px;
+                    width: fit-content;
+                    text-transform: uppercase;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: url(../../public/images/Travel.png) no-repeat;
+                        width: 672px;
+                        height: 100%;
+                        top: 60px;
+                        left: -200px;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 80px;
+                        height: 1px;
+                        top: 35px;
+                        right: 0;
+                        background-color: #4AF6CD;
                     }
                 }
             }
-            
+
+            &__description {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: right;
+                margin-right: 80px;
+
+                .h4-1 {
+                    position: relative;
+                    font-size: 22px;
+                    font-weight: 400;
+                    letter-spacing: 7.33px;
+                    color: #ffffff;
+                    line-height: 32px;
+                    text-transform: uppercase;
+                    opacity: 50.12%;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        width: 80px;
+                        background-color: #ffffff;
+                        opacity: 50%;
+                        top: 15px;
+                        left: -100px;
+                    }
+                }
+
+                h2 {
+                    position: relative;
+                    font-size: 40px;
+                    font-weight: 600;
+                    line-height: 86px;
+                    color: #ffffff;
+                    text-transform: uppercase;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 1px;
+                        height: 35px;
+                        background-color: #fff;
+                        top: 25px;
+                        right: 215px;
+                    }
+                }
+            }
+
+            &__content {
+                height: 780.3px;
+                margin-bottom: 295px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: url(/public/images/Airplane.png) no-repeat;
+                    background-position: right bottom;
+                    z-index: 10;
+                }
+            }
+
+            &__image {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 2;
+
+                img {
+                    max-width: 1115.29px;
+                    height: 780.3px;
+                }
+
+
+
+                &-description {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: end;
+                    margin-left: 130px;
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: bottom;
+
+                    .h4-1 {
+                        position: relative;
+                        font-size: 22px;
+                        font-weight: 400;
+                        letter-spacing: 7.33px;
+                        color: #ffffff;
+                        line-height: 32px;
+                        text-transform: uppercase;
+                        opacity: 50.12%;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            height: 1px;
+                            width: 80px;
+                            background-color: #ffffff;
+                            opacity: 50%;
+                            top: 15px;
+                            right: -100px;
+                        }
+                    }
+
+                    h2 {
+                        position: relative;
+                        font-size: 40px;
+                        font-weight: 800;
+                        line-height: 86px;
+                        color: #ffffff;
+                        text-transform: uppercase;
+                    }
+                }
+
+            }
+
+            &__columns {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                position: relative;
+                gap: 57px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background: url(/public/images/Lemonade-Cup.png) no-repeat;
+                    width: 564px;
+                    height: 564px;
+                    right: -250px;
+
+                }
+
+
+                &-item {
+                    display: flex;
+                    max-width: 260px;
+                    gap: 18px;
+                    position: relative;
+                    h5 {
+                        position: relative;
+                        display: inline-block;
+                        writing-mode: vertical-rl;
+                        transform: rotate(-180deg);
+                        transform-origin: center;
+                        font-size: 18px;
+                        font-weight: 300;
+                        line-height: 22px;
+                        letter-spacing: 8px;
+                        opacity: 50%;
+                        text-transform: uppercase;
+                        z-index: 2;
+                        color: #FFFFFF;
+                    }
+
+                    h2 {
+                        font-size: 40px;
+                        font-weight: 800;
+                        line-height: 36px;
+                        color: #fff;
+                    }
+                    &--before::before {
+                        content: 'Round Trip';
+                        position: absolute;
+                        color: #fff;
+                        font-size: 14px;
+                        line-height: 36px;
+                        letter-spacing: 5.25px;
+                        font-weight: 300;
+                        text-transform: uppercase;
+                        opacity: 75%;
+                        right: 0;
+                        top: 30%;
+                    }
+                }
+
+
+            }
+
+            &__button {
+                display: flex;
+                justify-content: center;
+                margin-top: 70px;
+            }
+
+
+
+
         }
+
+
     }
 }
-
-
