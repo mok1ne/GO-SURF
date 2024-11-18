@@ -51,8 +51,56 @@ $('.travel__content').slick({
     slidesToScroll: 1,
 });
 
+$('.sleep__content').slick({
+    infinite: true,
+    fade: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+});
 
-document.querySelector ('.slick-next')
+
+window.addEventListener('click', function (event) {
+    let counter;
+
+    if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
+        const columnsWrapper = event.target.closest('.sleep__columns-item');
+    
+        counter = columnsWrapper.querySelector('[data-counter]');
+
+        if (event.target.dataset.action === 'plus') {
+            counter.innerText = ++counter.innerText;
+        } else if (event.target.dataset.action === 'minus') {
+            if (parseInt(counter.innerText) > 1) {
+                counter.innerText = --counter.innerText;
+            }
+        }
+        const nightWrapper = columnsWrapper.closest('.sleep__image').querySelector('.sleep__columns-item:nth-child(2)');
+        const guestWrapper = columnsWrapper.closest('.sleep__image').querySelector('.sleep__columns-item:nth-child(3)');
+        
+        const nights = nightWrapper.querySelector('.items__nights-current');
+        const guests = guestWrapper.querySelector('.items__guests-current');
+        const fullPrice = columnsWrapper.closest('.sleep__image').querySelector('[data-counter--full]');
+        if (nights && guests && fullPrice) {
+            const totalPrice = (parseInt(nights.innerText) * 65) + (parseInt(guests.innerText) * 35);
+            fullPrice.innerText = totalPrice;
+        }
+    }
+});
+
+$('.shop__content').slick({
+    infinite: true,
+    fade: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+});
+
+
+
+
+
+
 
 
 

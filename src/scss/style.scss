@@ -86,7 +86,7 @@ body {
         color: #fff;
         z-index: 1;
         transition: all .5s ease;
-    
+
         &::before {
             content: '';
             position: absolute;
@@ -97,7 +97,44 @@ body {
             right: -10px;
             top: 0;
         }
-    
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+            left: 115px;
+            top: 38px;
+        }
+    }
+
+    &--hiden--2 {
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: transparent;
+        font-size: 40px;
+        line-height: 36px;
+        width: 280px;
+        height: 80px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #fff;
+        z-index: 1;
+        transition: all .5s ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 168px;
+            height: 80px;
+            background-color: #4AF6CD;
+            z-index: -1;
+            right: -10px;
+            top: 0;
+        }
+
         &::after {
             content: '';
             position: absolute;
@@ -567,14 +604,9 @@ body {
                     color: #ffffff;
                     text-transform: uppercase;
 
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        width: 1px;
-                        height: 35px;
-                        background-color: #fff;
-                        top: 25px;
-                        right: 90px;
+                    span {
+                        font-weight: 300;
+                        font-size: 40px;
                     }
                 }
             }
@@ -843,7 +875,19 @@ body {
         }
 
         .travel {
+            position: relative;
             margin-bottom: 265px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background: url(/public/images/Lemonade-Cup.png) no-repeat;
+                width: 564px;
+                height: 564px;
+                right: -250px;
+                bottom: -200px;
+
+            }
 
             &__title {
                 h2 {
@@ -915,14 +959,9 @@ body {
                     color: #ffffff;
                     text-transform: uppercase;
 
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        width: 1px;
-                        height: 35px;
-                        background-color: #fff;
-                        top: 25px;
-                        right: 215px;
+                    span {
+                        font-weight: 300;
+                        font-size: 40px;
                     }
                 }
             }
@@ -938,6 +977,260 @@ body {
                     height: 100%;
                     background: url(/public/images/Airplane.png) no-repeat;
                     background-position: right bottom;
+                    z-index: 10;
+                }
+            }
+
+            &__image {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 2;
+
+                img {
+                    max-width: 1115.29px;
+                    height: 780.3px;
+                }
+
+                &-description {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: end;
+                    margin-left: 130px;
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: bottom;
+
+                    .h4-1 {
+                        position: relative;
+                        font-size: 22px;
+                        font-weight: 400;
+                        letter-spacing: 7.33px;
+                        color: #ffffff;
+                        line-height: 32px;
+                        text-transform: uppercase;
+                        opacity: 50.12%;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            height: 1px;
+                            width: 80px;
+                            background-color: #ffffff;
+                            opacity: 50%;
+                            top: 15px;
+                            right: -100px;
+                        }
+                    }
+
+                    h2 {
+                        position: relative;
+                        font-size: 40px;
+                        font-weight: 800;
+                        line-height: 86px;
+                        color: #ffffff;
+                        text-transform: uppercase;
+
+
+                    }
+
+
+                }
+
+            }
+
+            &__columns {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                position: relative;
+                gap: 57px;
+                margin-top: 77px;
+
+
+
+
+                &-item {
+                    display: flex;
+                    max-width: 260px;
+                    gap: 18px;
+                    position: relative;
+                    text-transform: uppercase;
+
+                    h5 {
+                        position: relative;
+                        display: inline-block;
+                        writing-mode: vertical-rl;
+                        transform: rotate(-180deg);
+                        transform-origin: center;
+                        font-size: 18px;
+                        font-weight: 300;
+                        line-height: 22px;
+                        letter-spacing: 8px;
+                        opacity: 50%;
+                        text-transform: uppercase;
+                        z-index: 2;
+                        color: #FFFFFF;
+                    }
+
+                    h2 {
+                        font-size: 40px;
+                        font-weight: 800;
+                        line-height: 36px;
+                        color: #fff;
+                    }
+
+                    &--before::before {
+                        content: 'Round Trip';
+                        position: absolute;
+                        color: #fff;
+                        font-size: 14px;
+                        line-height: 36px;
+                        letter-spacing: 5.25px;
+                        font-weight: 300;
+                        text-transform: uppercase;
+                        opacity: 75%;
+                        right: 0;
+                        top: 30%;
+                    }
+
+                }
+
+
+
+
+            }
+
+            &__button {
+                display: flex;
+                justify-content: center;
+                margin-top: 600px;
+            }
+
+
+
+
+        }
+
+
+
+
+        .sleep {
+            margin-bottom: 265px;
+            position: relative;
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                background: url(/public/images/FlowerMax.png) no-repeat;
+                width: 564px;
+                height: 564px;
+                right: -390px;
+                bottom: -400px;
+
+            }
+
+            &__title {
+                h2 {
+                    position: relative;
+                    font-size: 80px;
+                    font-weight: 800;
+                    line-height: 156px;
+                    color: #ffffff;
+                    margin-left: 196px;
+                    width: fit-content;
+                    text-transform: uppercase;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: url(../../public/images/Sleep.png) no-repeat;
+                        width: 672px;
+                        height: 100%;
+                        top: 60px;
+                        left: -200px;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 80px;
+                        height: 1px;
+                        top: 35px;
+                        right: 0;
+                        background-color: #4AF6CD;
+                    }
+                }
+            }
+
+            &__description {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: right;
+                margin-right: 80px;
+
+                .h4-1 {
+                    position: relative;
+                    font-size: 22px;
+                    font-weight: 400;
+                    letter-spacing: 7.33px;
+                    color: #ffffff;
+                    line-height: 32px;
+                    text-transform: uppercase;
+                    opacity: 50.12%;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        width: 80px;
+                        background-color: #ffffff;
+                        opacity: 50%;
+                        top: 15px;
+                        left: -100px;
+                    }
+                }
+
+                h2 {
+                    position: relative;
+                    font-size: 40px;
+                    font-weight: 600;
+                    line-height: 86px;
+                    color: #ffffff;
+                    text-transform: uppercase;
+
+                    span {
+                        font-weight: 300;
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            &__content {
+                height: 780.3px;
+                margin-bottom: 295px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: url(/public/images/Hammock.png) no-repeat;
+                    background-position: right bottom;
+                    z-index: 10;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: url(/public/images/FlowerMini.png) no-repeat;
+                    background-position: right bottom;
+                    top: 130px;
                     z-index: 10;
                 }
             }
@@ -994,6 +1287,16 @@ body {
                         line-height: 86px;
                         color: #ffffff;
                         text-transform: uppercase;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background: url(/public/images/Star.png) no-repeat;
+                            right: -200px;
+                            top: 15px;
+                        }
                     }
                 }
 
@@ -1005,23 +1308,17 @@ body {
                 align-items: flex-start;
                 position: relative;
                 gap: 57px;
+                margin-top: 77px;
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    background: url(/public/images/Lemonade-Cup.png) no-repeat;
-                    width: 564px;
-                    height: 564px;
-                    right: -250px;
-
-                }
 
 
                 &-item {
                     display: flex;
-                    max-width: 260px;
+                    width: 260px;
                     gap: 18px;
                     position: relative;
+                    text-transform: uppercase;
+
                     h5 {
                         position: relative;
                         display: inline-block;
@@ -1044,8 +1341,9 @@ body {
                         line-height: 36px;
                         color: #fff;
                     }
+
                     &--before::before {
-                        content: 'Round Trip';
+                        content: 'Pricing';
                         position: absolute;
                         color: #fff;
                         font-size: 14px;
@@ -1054,8 +1352,28 @@ body {
                         font-weight: 300;
                         text-transform: uppercase;
                         opacity: 75%;
-                        right: 0;
+                        right: 32px;
                         top: 30%;
+                    }
+
+
+
+                    .items__control {
+                        font-size: 26px;
+                        font-weight: 600;
+                        color: #FFFFFF;
+                        cursor: pointer;
+                    }
+
+                    .sleep__columns-item--bottom {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .sleep__columns-item--buttons {
+                        display: flex;
+                        justify-content: flex-end;
+                        gap: 16px;
                     }
                 }
 
@@ -1065,10 +1383,29 @@ body {
             &__button {
                 display: flex;
                 justify-content: center;
-                margin-top: 70px;
+                margin-top: 600px;
             }
 
 
+
+
+        }
+
+        .shop {
+            &__image-item {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 2;
+
+                img {
+                    max-width: 1115.29px;
+                    height: 780.3px;
+                }
+
+
+
+            }
 
 
         }
