@@ -37,8 +37,6 @@ $('.bg__slider-info').slick({
     draggable: false,
     zIndex: 10
 });
-
-
 $('.travel__content').slick({
     infinite: true,
     fade: true,
@@ -59,13 +57,12 @@ $('.sleep__content').slick({
     slidesToScroll: 1,
 });
 
-
 window.addEventListener('click', function (event) {
     let counter;
 
     if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
         const columnsWrapper = event.target.closest('.sleep__columns-item');
-    
+
         counter = columnsWrapper.querySelector('[data-counter]');
 
         if (event.target.dataset.action === 'plus') {
@@ -77,7 +74,7 @@ window.addEventListener('click', function (event) {
         }
         const nightWrapper = columnsWrapper.closest('.sleep__image').querySelector('.sleep__columns-item:nth-child(2)');
         const guestWrapper = columnsWrapper.closest('.sleep__image').querySelector('.sleep__columns-item:nth-child(3)');
-        
+
         const nights = nightWrapper.querySelector('.items__nights-current');
         const guests = guestWrapper.querySelector('.items__guests-current');
         const fullPrice = columnsWrapper.closest('.sleep__image').querySelector('[data-counter--full]');
@@ -90,20 +87,36 @@ window.addEventListener('click', function (event) {
 
 $('.shop__content').slick({
     infinite: true,
-    fade: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+
 });
 
 
+document.querySelectorAll('.header__list a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
-
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', () => {
+    const travelPlane = document.querySelector('.travel__plane');
+    window.addEventListener('scroll', () => {
+        let topScroll = window.scrollY
+        if (topScroll >= 3250) {
+            travelPlane.classList.add('plane-animation')
+        }
+    })
+});
 
 
 

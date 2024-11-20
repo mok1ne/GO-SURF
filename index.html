@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="src/scss/media.css">
     <title>GO SURF</title>
 </head>
 
@@ -17,13 +18,13 @@
                 </div>
                 <nav class="header__nav">
                     <ul class="header__ul">
-                        <li class="header__list"><a href="#"><img src="public/images/ico/Surf.svg" alt="Surf">Surf</a>
+                        <li class="header__list"><a href="#surf"><img src="public/images/ico/Surf.svg" alt="Surf">Surf</a>
                         </li>
-                        <li class="header__list"><a href="#"><img src="public/images/ico/Travel.svg"
+                        <li class="header__list"><a href="#travel"><img src="public/images/ico/Travel.svg"
                                     alt="Travel">Travel</a></li>
-                        <li class="header__list"><a href="#"><img src="public/images/ico/Camp.svg" alt="Camp">Sleep</a>
+                        <li class="header__list"><a href="#sleep"><img src="public/images/ico/Camp.svg" alt="Camp">Sleep</a>
                         </li>
-                        <li class="header__list"><a href="#"><img src="public/images/ico/Surfboat.svg" alt="Shop"
+                        <li class="header__list"><a href="#shop"><img src="public/images/ico/Surfboat.svg" alt="Shop"
                                     width="20px" height="auto">Shop</a></li>
                     </ul>
                 </nav>
@@ -44,7 +45,7 @@
             </div>
         </header>
         <main class="main">
-            <section class="main__bg">
+            <section class="main__bg" id="main_bg">
                 <div class="bg__slider">
                     <div class="bg__slider-info">
                         <div class="slider__image"> <img src="public/images/surf_bg.jpg" alt="bg1">
@@ -82,7 +83,7 @@
                     </div>
                 </div>
             </section>
-            <section class="about__surf">
+            <section class="about__surf" id="surf">
                 <div class="surf__inner">
                     <div class="surf__title">
                         <h2>Surf</h2>
@@ -357,12 +358,16 @@
                     </div>
                 </div>
             </section>
-            <section class="travel">
+            <section class="travel" id="travel">
                 <div class="travel__inner">
                     <div class="travel__title">
                         <h2>Travel</h2>
                     </div>
+                    <div class="travel__plane">
+                        <img src="public/images/Airplane.png" alt="AirPlane">
+                    </div>
                     <div class="travel__content">
+
                         <div class="travel__image">
                             <div class="travel__description">
                                 <h4 class="h4-1">Shore</h4>
@@ -460,10 +465,13 @@
                     </div>
                 </div>
             </section>
-            <section class="sleep">
+            <section class="sleep" id="sleep">
                 <div class="sleep__inner">
                     <div class="sleep__title">
                         <h2>Sleep</h2>
+                    </div>
+                    <div class="sleep__hammock">
+                        <img src="public/images/Hammock.png" alt="Hammock">
                     </div>
                     <div class="sleep__content">
                         <div class="sleep__image">
@@ -617,47 +625,108 @@
                     </div>
                 </div>
             </section>
-            <section class="shop">
+            <section class="shop" id="shop">
                 <div class="shop__inner">
                     <div class="shop__title">
                         <h2>Shop</h2>
                     </div>
                     <div class="shop__content">
                         <div class="shop__image">
-                            <h6>STYLE</h6>
-                            <h3>North Nugget TT
-                                Surfboard</h3>
-                            <img src="public/images/Star.png" alt="Stars">
-                            <h4>$799</h4>
-                            <button>DROP IN</button>
-
-                            <img src="public/images/Surfboard1.png" alt="SurfBoard1">
-
-                            <div class="shop__image">
-                                <h6>STYLE</h6>
+                            <div class="shop__image-item">
+                                <h5>STYLE</h5>
                                 <h3>North Nugget TT
                                     Surfboard</h3>
-                                <img src="public/images/Star.png" alt="Stars">
+                                <img src="public/images/Star.png" alt="Stars"
+                                    style="width: 154px; height: 44px; margin-left: -12px;">
                                 <h4>$799</h4>
-                                <button>DROP IN</button>
-
+                                <button class="view-surf--hiden--3">DROP&nbsp;&nbsp;&nbsp;&nbsp;IN →</button>
+                            </div>
+                            <div class="shop__image-img">
                                 <img src="public/images/Surfboard1.png" alt="SurfBoard1">
-
-                                <div class="shop__image">
-                                    <h6>STYLE</h6>
-                                    <h3>North Nugget TT
-                                        Surfboard</h3>
-                                    <img src="public/images/Star.png" alt="Stars">
-                                    <h4>$799</h4>
-                                    <button>DROP IN</button>
-
-                                    <img src="public/images/Surfboard1.png" alt="SurfBoard1">
-
+                                <div class="shop-point"></div>
+                            </div>
+                            <div class="shop__image-inner">
+                                <h4>Extras</h4>
+                                <div class="shop__image-inner--bottom">
+                                    <div class="shop__image-inner--item">
+                                        <img src="public/images/Wax.png" alt="Wax" style="margin-bottom: 35px;">
+                                        <h4>Sex Wax</h4>
+                                        <h5>$24.99</h5>
+                                    </div>
+                                    <div class="shop__image-inner--item">
+                                        <img src="public/images/Bracelet.png" alt="Wax" style="margin-bottom: 58px;">
+                                        <h4>Pura Vida</h4>
+                                        <h5>$27.99</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop__image" >
+                            <div class="shop__image-item">
+                                <h5>STYLE</h5>
+                                <h3>North Sense Kite Foil
+                                    Surfboard</h3>
+                                <img src="public/images/Star.png" alt="Stars"
+                                    style="width: 154px; height: 44px; margin-left: -12px;">
+                                <h4>$899</h4>
+                                <button class="view-surf--hiden--3">DROP&nbsp;&nbsp;&nbsp;&nbsp;IN →</button>
+                            </div>
+                            <div class="shop__image-img">
+                                <img src="public/images/Surfboard2.png" alt="SurfBoard2">
+                                <div class="shop-point"></div>
+                            </div>
+                            <div class="shop__image-inner">
+                                <h4>Extras</h4>
+                                <div class="shop__image-inner--bottom">
+                                    <div class="shop__image-inner--item">
+                                        <img src="public/images/Wax.png" alt="Wax" style="margin-bottom: 35px;">
+                                        <h4>Sex Wax</h4>
+                                        <h5>$42.99</h5>
+                                    </div>
+                                    <div class="shop__image-inner--item">
+                                        <img src="public/images/Bracelet.png" alt="Wax" style="margin-bottom: 58px;">
+                                        <h4>Pura Vida</h4>
+                                        <h5>$30.99</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop__image">
+                            <div class="shop__image-item">
+                                <h5>STYLE</h5>
+                                <h3>North KB Comp
+                                    Surfboard</h3>
+                                <img src="public/images/Star.png" alt="Stars"
+                                    style="width: 154px; height: 44px; margin-left: -12px;">
+                                <h4>$999</h4>
+                                <button class="view-surf--hiden--3">DROP&nbsp;&nbsp;&nbsp;&nbsp;IN →</button>
+                            </div>
+                            <div class="shop__image-img">
+                                <img src="public/images/Surfboard3.png" alt="SurfBoard3">
+                                <div class="shop-point"></div>
+                            </div>
+                            <div class="shop__image-inner">
+                                <h4>Extras</h4>
+                                <div class="shop__image-inner--bottom">
+                                    <div class="shop__image-inner--item">
+                                        <img src="public/images/Wax.png" alt="Wax" style="margin-bottom: 35px;">
+                                        <h4>Sex Wax</h4>
+                                        <h5>$34.99</h5>
+                                    </div>
+                                    <div class="shop__image-inner--item">
+                                        <img src="public/images/Bracelet.png" alt="Wax" style="margin-bottom: 58px;">
+                                        <h4>Pura Vida</h4>
+                                        <h5>$47.99</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
             </section>
         </main>
+        <footer>
+            <button class="view-surf--hiden--4">GO&nbsp;&nbsp;&nbsp;&nbsp;SURF</button>
+            <h4>© Go-Surf 2018. All Rights Reserved.</h4>
+        </footer>
     </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
