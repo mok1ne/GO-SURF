@@ -109,14 +109,137 @@ document.querySelectorAll('.header__list a').forEach(link => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    const surfTitle = document.querySelector('.surf__title')
+    const surfDescription = document.querySelector('.surf__description')
+    const surfPoint = document.querySelectorAll('.surf__point')
+    const beachImage2 = document.querySelector('.about__image--2')
+    const beachImage4 = document.querySelector('.about__image--4')
+    const travelTitle = document.querySelector('.travel__title')
+    const travelDescription = document.querySelectorAll('.travel__description')
     const travelPlane = document.querySelector('.travel__plane');
+    const travelImageDescription = document.querySelectorAll('.travel__image-description')
+    const travelButton = document.querySelector ('.travel__button')
+    const sleepImageDescription = document.querySelectorAll('.sleep__image-description')
+    const travelColumnItem = document.querySelectorAll ('.travel__columns-item')
+    const sleepTitle = document.querySelector ('.sleep__title')
+    const sleepDescription = document.querySelectorAll ('.sleep__description')
+    const sleepItemColumns = document.querySelectorAll ('.sleep__columns-item')
+    const sleepButton = document.querySelector ('.sleep__button')
+    const shopTitle = document.querySelector ('.shop__title')
+    const shopImageItem = document.querySelectorAll ('.shop__image-item')
+    const shopImageImg = document.querySelectorAll ('.shop__image-img')
+    const shopImageInner = document.querySelectorAll ('.shop__image-inner')
+    const footer = document.querySelector ('.footer')
+    const button = document.querySelector ('button')
     window.addEventListener('scroll', () => {
         let topScroll = window.scrollY
-        if (topScroll >= 3250) {
+        if (topScroll >= 400) {
+            surfTitle.classList.add('animation-in-side')
+        }
+
+        if (topScroll >= 450) {
+            surfDescription.classList.add('animation-in-side')
+        }
+
+        if (topScroll >= 450) {
+            surfDescription.classList.add('animation-in-side')
+        }
+        if (topScroll >= 780) {
+            for (const point of surfPoint) {
+                point.classList.add('animation-in-bottom')
+            }
+        }
+
+        if (topScroll >= 1550) {
+            beachImage2.classList.add('animation-in-bottom')
+            beachImage4.classList.add('animation-in-bottom')
+        }
+
+        if (topScroll >= 2600) {
+            travelTitle.classList.add('animation-in-side')          
+        }
+
+        if (topScroll >= 2760) {
+            for (const travelDesc of travelDescription) {
+                travelDesc.classList.add('animation-in-side')
+            } 
+        }
+
+        if (topScroll >= 3480) {
             travelPlane.classList.add('plane-animation')
         }
+
+        if (topScroll >= 3600) {
+            for (const travelImageDesc of travelImageDescription) {
+                travelImageDesc.classList.add('animation-in-bottom')
+            }
+        }
+        if (topScroll >= 3850) {
+            for (const travelColumnItm of travelColumnItem) {
+                travelColumnItm.classList.add('animation-in-bottom')
+            }
+        }
+
+        if (topScroll >= 4300) {
+            travelButton.classList.add('animation-opacity')
+        }
+
+        if (topScroll >= 4700) {
+            sleepTitle.classList.add('animation-in-side')
+        }
+
+        if (topScroll >= 4800) {
+            for (const sleepDesc of sleepDescription) {
+                sleepDesc.classList.add('animation-in-side')
+            }
+        }
+
+        if (topScroll >= 5700) {
+            for (const sleepImageDesc of sleepImageDescription) {
+                sleepImageDesc.classList.add('animation-in-side')
+            }
+        }
+        if (topScroll >= 5850) {
+            for (const sleepitemColm of sleepItemColumns) {
+                sleepitemColm.classList.add('animation-in-side')
+            }
+        }
+
+        if (topScroll >= 6200) {
+            sleepButton.classList.add ('animation-opacity')
+        }
+
+        if (topScroll >= 6550) {
+            shopTitle.classList.add('animation-in-side')
+        }
+
+        if (topScroll >= 6950) {
+            for (const shopImageItm of shopImageItem) {
+                shopImageItm.classList.add('animation-in-bottom')
+            }
+            for (const shopImg of shopImageImg) {
+                shopImg.classList.add('animation-in-bottom')
+            }
+        }
+        if (topScroll >=7100) {
+            for (const shopImageInr of shopImageInner) {
+                shopImageInr.classList.add('animation-in-bottom')
+            }
+        }
+
+        
+        if (topScroll >= 7590) {
+            footer.classList.add('animation-in-bottom')
+        }
+        
+        console.log(topScroll);
+
     })
 });
+
+
+
+
 
 
 
