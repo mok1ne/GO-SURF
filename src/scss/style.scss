@@ -17,17 +17,20 @@ body {
     opacity: 1 !important;
     visibility: visible !important;
     transform: translateX(0) !important;
+    transition: all .4s ease;
 }
 
 .animation-in-bottom {
     opacity: 1 !important;
     visibility: visible !important;
     transform: translateY(0) !important;
+    transition: all .4s ease;
 }
 
 .animation-opacity {
     opacity: 1 !important;
     visibility: visible !important;
+    transition: all .4s ease;
 }
 
 
@@ -252,6 +255,28 @@ body {
     max-width: 100%;
     overflow: hidden;
 
+    .up-arrows {
+        display: flex;
+        position: fixed;
+        left: 10%;
+        bottom: 10px;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s ease !important;
+
+        img {
+            transform: rotate(180deg);
+        }
+
+
+    }
+
+    .opacity-arrows {
+        opacity: 20% !important;
+        transition: all .5s ease !important;
+    }
+
     .container {
         margin: 0 168px;
         margin: auto;
@@ -260,19 +285,116 @@ body {
     .header {
         width: 168px;
         height: 977px;
-        position: relative;
-        border-right: 1px solid #FFFFFF;
-        z-index: 10;
 
-        &::before {
-            content: '';
-            position: absolute;
-            background-color: #4AF6CD;
-            height: 191px;
-            width: 168px;
-            left: 0;
+        .burger__menu {
+            display: none;
+            position: relative;
+            width: 80px;
+            height: 80px;
+            z-index: 1001;
+
+            &.active span:nth-child(1) {
+                top: 60px;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            &.active span:nth-child(3) {
+                top: 60px;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
+
+            span {
+                height: 2px;
+                width: 30px;
+                background-color: #fff;
+                z-index: 1000;
+                position: absolute;
+                left: 40px;
+                top: 60px;
+                transform: translate(-50%, -50%);
+                transition: all .4s ease;
+
+                &:nth-child(1) {
+                    top: 50px;
+                }
+
+                &:nth-child(3) {
+                    top: 70px;
+                }
+            }
+        }
+
+        .burger__menu-style {
+            padding-top: 150px;
             top: 0;
-            z-index: 1;
+            width: 50%;
+            height: 100vh;
+            position: fixed;
+            z-index: 1000;
+            background-color: transparent;
+            backdrop-filter: blur(20px);
+            transition: all .5s ease;
+            opacity: 0;
+            left: -100vh;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 70px;
+
+                .header__list-burger--surfboat {
+                    img {
+                        width: 40px !important;
+                    }
+                }
+
+                .header__list-burger {
+                    a {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        font-size: 18px;
+                        line-height: 14px;
+                        letter-spacing: 3px;
+                        color: #FFFFFF;
+
+                        img {
+                            width: 60px;
+                            margin-bottom: 5px;
+
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                left: 0;
+                opacity: 1;
+            }
+        }
+
+        &__inner {
+            position: relative;
+            border-right: 1px solid #FFFFFF;
+            z-index: 10;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: #4AF6CD;
+                height: 191px;
+                width: 168px;
+                left: 0;
+                top: 0;
+                z-index: 1;
+            }
         }
 
 
@@ -393,7 +515,7 @@ body {
             &::before {
                 content: '';
                 position: absolute;
-                background: url(../../public/images/go\ surf.png);
+                background: url(../../public/images/go\ surf.png) no-repeat;
                 max-width: 452px;
                 max-height: 303px;
                 top: 0;
@@ -516,6 +638,7 @@ body {
                         img {
                             width: 100%;
                             height: 977px;
+                            object-fit: cover;
 
 
                         }
@@ -608,7 +731,6 @@ body {
 
             .surf__inner {
                 padding-top: 160px;
-                margin: 0 80px;
                 position: relative;
 
                 &::before {
@@ -650,6 +772,7 @@ body {
                     margin-left: 196px;
                     width: fit-content;
                     text-transform: uppercase;
+                    margin-left: 80px;
 
 
                     &::before {
@@ -684,6 +807,7 @@ body {
                 opacity: 0;
                 visibility: hidden;
                 transform: translateX(3000px);
+                margin-right: 80px;
                 transition: all .5s ease;
 
                 .h4-1 {
@@ -743,14 +867,12 @@ body {
                     height: 100%;
                     max-width: 1259px;
                     max-height: 665.024px;
-                    object-fit: cover;
                 }
             }
 
             .surf__point:hover .surf__point-info {
                 opacity: 1;
                 visibility: visible;
-                ;
                 transition: all .6s ease;
             }
 
@@ -898,10 +1020,20 @@ body {
         .about__beach {
             margin-bottom: 265px;
 
+            .slick-slide {}
+
             .about__info {
                 display: flex;
-                align-items: center;
                 justify-content: center;
+                align-items: center;
+                position: relative;
+
+                .slick-next,
+                .slick-prev {
+                    top: -40px !important;
+                }
+
+
 
                 .about__image {
                     width: 100%;
@@ -953,15 +1085,14 @@ body {
 
                     &--1 {
                         background: url(../../public/images/MalibuBeach.jpg) no-repeat;
-                        width: 390px;
+                        background-size: 100% 100%;
                         height: 750px;
                         z-index: 2;
-                        transform: translateX(65px);
                     }
 
                     &--2 {
                         background: url(../../public/images/Airlie\ Beach.jpg) no-repeat;
-                        width: 390px;
+                        background-size: 100% 100%;
                         height: 750px;
                         margin-bottom: 32px;
                         z-index: 2;
@@ -975,7 +1106,7 @@ body {
 
                     &--3 {
                         background: url(../../public/images/Cloud\ Nine\ Beach.jpg) no-repeat;
-                        width: 390px;
+                        background-size: 100% 100%;
                         height: 750px;
                         z-index: 2;
                         margin-top: 87px;
@@ -983,7 +1114,7 @@ body {
 
                     &--4 {
                         background: url(../../public/images/Vieux\ Boucau\ Beach.jpg) no-repeat;
-                        width: 390px;
+                        background-size: 100% 100%;
                         height: 750px;
                         z-index: 2;
                         margin-bottom: 32px;
@@ -1028,7 +1159,7 @@ body {
                     font-weight: 800;
                     line-height: 156px;
                     color: #ffffff;
-                    margin-left: 196px;
+                    margin-left: 250px;
                     width: fit-content;
                     text-transform: uppercase;
 
@@ -1040,7 +1171,7 @@ body {
                         width: 672px;
                         height: 100%;
                         top: 60px;
-                        left: -200px;
+                        right: -150px;
                     }
 
                     &::after {
@@ -1308,7 +1439,7 @@ body {
                     font-weight: 800;
                     line-height: 156px;
                     color: #ffffff;
-                    margin-left: 196px;
+                    margin-left: 250px;
                     width: fit-content;
                     text-transform: uppercase;
 
@@ -1320,7 +1451,7 @@ body {
                         width: 672px;
                         height: 100%;
                         top: 60px;
-                        left: -200px;
+                        right: -192px;
                     }
 
                     &::after {
@@ -1490,6 +1621,7 @@ body {
                 position: relative;
                 gap: 57px;
                 margin-top: 77px;
+                margin-bottom: 30px;
 
 
 
@@ -1592,6 +1724,7 @@ body {
 
         .shop {
             margin-bottom: 300px;
+            position: relative;
 
             &::before {
                 content: '';
@@ -1656,6 +1789,7 @@ body {
                     visibility: hidden;
                     transform: translateY(300px);
                     transition: all .5s ease;
+
 
                     .shop-point {
                         position: absolute;
@@ -1821,6 +1955,7 @@ body {
 
                             .shop__point-content {
                                 position: absolute;
+                                text-wrap: wrap;
                                 width: 255px;
                                 left: 130px;
                                 top: -15px;

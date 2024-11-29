@@ -1,5 +1,19 @@
 import '../../src/scss/style.scss'
 
+const burgerMenu = document.querySelector('.burger__menu')
+const burgerMenuStyle = document.querySelector('.burger__menu-style')
+
+burgerMenu.addEventListener('click', function () {
+    burgerMenu.classList.toggle('active')
+    burgerMenuStyle.classList.toggle('active')
+    if (burgerMenu.classList.contains('active')) {
+        burgerMenu.style.position = 'fixed'
+    } else {
+        burgerMenu.style.position = 'relative'
+    }
+})
+
+
 function clockTick() {
     let currentTime = new Date(),
         month = currentTime.getMonth() + 1,
@@ -93,8 +107,48 @@ $('.shop__content').slick({
 
 });
 
+$('.about__info').slick({
+    infinite: false,
+    speed: 500,
+    slidesToScroll: 1,
+    slidesToShow: 4,
+    responsive: [
+        {
+            breakpoint: 1558,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 1170,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 780,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 400,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
 
-document.querySelectorAll('.header__list a').forEach(link => {
+            }
+        }
+
+
+    ]
+});
+
+
+document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
@@ -109,6 +163,7 @@ document.querySelectorAll('.header__list a').forEach(link => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    const upArrows = document.querySelector('.up-arrows')
     const surfTitle = document.querySelector('.surf__title')
     const surfDescription = document.querySelector('.surf__description')
     const surfPoint = document.querySelectorAll('.surf__point')
@@ -118,102 +173,111 @@ document.addEventListener('DOMContentLoaded', () => {
     const travelDescription = document.querySelectorAll('.travel__description')
     const travelPlane = document.querySelector('.travel__plane');
     const travelImageDescription = document.querySelectorAll('.travel__image-description')
-    const travelButton = document.querySelector ('.travel__button')
+    const travelButton = document.querySelector('.travel__button')
     const sleepImageDescription = document.querySelectorAll('.sleep__image-description')
-    const travelColumnItem = document.querySelectorAll ('.travel__columns-item')
-    const sleepTitle = document.querySelector ('.sleep__title')
-    const sleepDescription = document.querySelectorAll ('.sleep__description')
-    const sleepItemColumns = document.querySelectorAll ('.sleep__columns-item')
-    const sleepButton = document.querySelector ('.sleep__button')
-    const shopTitle = document.querySelector ('.shop__title')
-    const shopImageItem = document.querySelectorAll ('.shop__image-item')
-    const shopImageImg = document.querySelectorAll ('.shop__image-img')
-    const shopImageInner = document.querySelectorAll ('.shop__image-inner')
-    const footer = document.querySelector ('.footer')
-    const button = document.querySelector ('button')
+    const travelColumnItem = document.querySelectorAll('.travel__columns-item')
+    const sleepTitle = document.querySelector('.sleep__title')
+    const sleepDescription = document.querySelectorAll('.sleep__description')
+    const sleepItemColumns = document.querySelectorAll('.sleep__columns-item')
+    const sleepButton = document.querySelector('.sleep__button')
+    const shopTitle = document.querySelector('.shop__title')
+    const shopImageItem = document.querySelectorAll('.shop__image-item')
+    const shopImageImg = document.querySelectorAll('.shop__image-img')
+    const shopImageInner = document.querySelectorAll('.shop__image-inner')
+    const footer = document.querySelector('.footer')
+    let isScrolling;
     window.addEventListener('scroll', () => {
         let topScroll = window.scrollY
-        if (topScroll >= 400) {
+        if (topScroll >= 600) {
+            upArrows.classList.add('animation-opacity')
+
+        } else {
+            upArrows.classList.remove('animation-opacity')
+        }
+        upArrows.classList.add('opacity-arrows');
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+            upArrows.classList.remove('opacity-arrows');
+        }, 600);
+
+        if (topScroll >= 500) {
             surfTitle.classList.add('animation-in-side')
         }
 
-        if (topScroll >= 450) {
+        if (topScroll >= 550) {
             surfDescription.classList.add('animation-in-side')
         }
 
-        if (topScroll >= 450) {
-            surfDescription.classList.add('animation-in-side')
-        }
-        if (topScroll >= 780) {
+        if (topScroll >= 930) {
             for (const point of surfPoint) {
                 point.classList.add('animation-in-bottom')
             }
         }
 
-        if (topScroll >= 1550) {
+        if (topScroll >= 1700) {
             beachImage2.classList.add('animation-in-bottom')
             beachImage4.classList.add('animation-in-bottom')
         }
 
-        if (topScroll >= 2600) {
-            travelTitle.classList.add('animation-in-side')          
+        if (topScroll >= 2700) {
+            travelTitle.classList.add('animation-in-side')
         }
 
-        if (topScroll >= 2760) {
+        if (topScroll >= 2860) {
             for (const travelDesc of travelDescription) {
                 travelDesc.classList.add('animation-in-side')
-            } 
+            }
         }
 
-        if (topScroll >= 3480) {
+        if (topScroll >= 3580) {
             travelPlane.classList.add('plane-animation')
         }
 
-        if (topScroll >= 3600) {
+        if (topScroll >= 3700) {
             for (const travelImageDesc of travelImageDescription) {
                 travelImageDesc.classList.add('animation-in-bottom')
             }
         }
-        if (topScroll >= 3850) {
+        if (topScroll >= 3950) {
             for (const travelColumnItm of travelColumnItem) {
                 travelColumnItm.classList.add('animation-in-bottom')
             }
         }
 
-        if (topScroll >= 4300) {
+        if (topScroll >= 4450) {
             travelButton.classList.add('animation-opacity')
         }
 
-        if (topScroll >= 4700) {
+        if (topScroll >= 4800) {
             sleepTitle.classList.add('animation-in-side')
         }
 
-        if (topScroll >= 4800) {
+        if (topScroll >= 4900) {
             for (const sleepDesc of sleepDescription) {
                 sleepDesc.classList.add('animation-in-side')
             }
         }
 
-        if (topScroll >= 5700) {
+        if (topScroll >= 5800) {
             for (const sleepImageDesc of sleepImageDescription) {
                 sleepImageDesc.classList.add('animation-in-side')
             }
         }
-        if (topScroll >= 5850) {
+        if (topScroll >= 5950) {
             for (const sleepitemColm of sleepItemColumns) {
                 sleepitemColm.classList.add('animation-in-side')
             }
         }
 
-        if (topScroll >= 6200) {
-            sleepButton.classList.add ('animation-opacity')
+        if (topScroll >= 6400) {
+            sleepButton.classList.add('animation-opacity')
         }
 
-        if (topScroll >= 6550) {
+        if (topScroll >= 6650) {
             shopTitle.classList.add('animation-in-side')
         }
 
-        if (topScroll >= 6950) {
+        if (topScroll >= 7050) {
             for (const shopImageItm of shopImageItem) {
                 shopImageItm.classList.add('animation-in-bottom')
             }
@@ -221,21 +285,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 shopImg.classList.add('animation-in-bottom')
             }
         }
-        if (topScroll >=7100) {
+        if (topScroll >= 7200) {
             for (const shopImageInr of shopImageInner) {
                 shopImageInr.classList.add('animation-in-bottom')
             }
         }
 
-        
-        if (topScroll >= 7590) {
+
+        if (topScroll >= 7600) {
             footer.classList.add('animation-in-bottom')
         }
-        
+
         console.log(topScroll);
 
     })
 });
+
+
 
 
 
