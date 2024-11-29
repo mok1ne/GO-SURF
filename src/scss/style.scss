@@ -384,6 +384,8 @@ body {
             position: relative;
             border-right: 1px solid #FFFFFF;
             z-index: 10;
+            width: 168px;
+            height: 977px;
 
             &::before {
                 content: '';
@@ -740,7 +742,7 @@ body {
                     height: 4000%;
                     background-color: #41414121;
                     ;
-                    left: 87px;
+                    left: 166px;
                     top: 0;
                     z-index: -1;
                 }
@@ -772,7 +774,6 @@ body {
                     margin-left: 196px;
                     width: fit-content;
                     text-transform: uppercase;
-                    margin-left: 80px;
 
 
                     &::before {
