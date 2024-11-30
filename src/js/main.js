@@ -295,18 +295,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (topScroll >= 7600) {
             footer.classList.add('animation-in-bottom')
         }
-
-        console.log(topScroll);
-
     })
 });
-
-
-
-
-
-
-
-
-
-
