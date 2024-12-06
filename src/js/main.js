@@ -207,12 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        if (topScroll >= 1700) {
+        if (topScroll >= 1600) {
             beachImage2.classList.add('animation-in-bottom')
             beachImage4.classList.add('animation-in-bottom')
         }
 
-        if (topScroll >= 2700) {
+        if (topScroll >= 2550) {
             travelTitle.classList.add('animation-in-side')
         }
 
@@ -262,15 +262,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        if (topScroll >= 6400) {
+        if (topScroll >= 6450) {
             sleepButton.classList.add('animation-opacity')
         }
 
-        if (topScroll >= 6650) {
+        if (topScroll >= 6720) {
             shopTitle.classList.add('animation-in-side')
         }
 
-        if (topScroll >= 7050) {
+        if (topScroll >= 7100) {
             for (const shopImageItm of shopImageItem) {
                 shopImageItm.classList.add('animation-in-bottom')
             }
